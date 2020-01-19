@@ -80,6 +80,24 @@ covariance=(sum_of_product_of_xy-(instance*length_mean*width_mean))/(instance-1)
 #the covariance for the data is calculated which is based on the formula givn below
 #covariance=(sum_xy-(n*x_mean*y_mean))/n-1
 
+b1=covariance/length_variance;
+#the slope of the regression line is calculated which is obtained by dividing the covariance by the variance of x 
+
+b0=width_mean-(b1*length_mean);
+#the intercept of the regression line is calculated which is based on the formula given below
+#b0=y_mean-(b1*x_mean)
+
+
+print("Enter the value of the length of the automobile for which the width has to be predicted using linear regression");
+
+input_length=input();
+
+output_width=b0+b1*input_length;
+
+print("THE ESTIMATED VALUE FOR WIDTH IS ");
+print(output_width);
+
+
 
 
 
